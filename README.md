@@ -4,7 +4,7 @@ Windows 上的独立浏览器代理后台：读取 Clash Verge Rev 已下载的�
 
 **版本：2.0.0 · Windows x64 · 应用源码采用 MIT。**
 
-[下载 Windows 版](https://github.com/Only-YingFeng/multi-subscription-hub/releases/latest) · [使用说明](#使用流程) · [从源码运行与构建](#从源码运行与构建) · [许可与第三方声明](NOTICE.md)
+[直接下载 EXE](https://github.com/Only-YingFeng/multi-subscription-hub/releases/latest/download/MultiSubscriptionHub.exe) · [完整包与版本说明](https://github.com/Only-YingFeng/multi-subscription-hub/releases/latest) · [使用说明](#使用流程) · [从源码运行与构建](#从源码运行与构建) · [许可与第三方声明](NOTICE.md)
 
 ![原生深色界面示意](docs/interface-demo.png)
 
@@ -27,7 +27,9 @@ Windows 上的独立浏览器代理后台：读取 Clash Verge Rev 已下载的�
 1. Windows x64；本次构建和源码环境为 CPython 3.13 x64。
 2. 已安装并运行 Clash Verge Rev，已下载自己的有效订阅，主 Clash 使用规则模式。本版本以 Clash Verge Rev 2.5.7 / Mihomo 1.19.32 完成本机验证；其他版本或电脑尚未逐一验收。
 3. 浏览器已安装 ZeroOmega。
-4. 下载并完整解压 Windows ZIP，保留 EXE、源码、应用 LICENSE 与第三方许可，不要只分发 EXE。
+4. 直接下载 `MultiSubscriptionHub.exe`，放在自己的可写文件夹中，双击即可运行，无需解压或安装 Python。完整 ZIP 是可选下载，包含对应源码和许可材料。
+
+EXE 自带 Python / Qt 运行环境和第三方许可材料。应用自身 MIT 许可、对应源码及完整第三方说明同时保留在本仓库和完整 ZIP 中；修改或再分发时仍需遵守相关许可。
 
 应用没有打包任何机场账号或代理核心。它会寻找正在运行的 `verge-mihomo.exe`，并私有复制所需核心；自动识别失败时，可在右上角“设置”指定 Clash 数据目录和标准 Mihomo 核心路径。已下载配置与 rule-provider 缓存仍来自自己的 Clash。
 
