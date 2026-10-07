@@ -1,4 +1,28 @@
-# 多订阅后台助手 · Multi Subscription Hub
+# 浏览器节点工具集
+
+这个公开仓库同时提供 **Clash 节点备份助手 1.0.2** 和 **多订阅后台助手 2.0.0**。两款软件独立运行，按需求选用；都有独立 EXE，不需要同时打开。
+
+## 选择哪个软件
+
+| 软件 | 适用场景 | 是否写回主 Clash | Windows EXE | 使用说明 |
+| --- | --- | --- | --- | --- |
+| **Clash 节点备份助手 1.0.2** | 为 Clash 当前订阅中的每条节点生成 ZeroOmega 情景模式 | 需要时明确确认，再持久写回订阅扩展并热重载 | [直接下载 ClashZeroOmega.exe](https://github.com/Only-YingFeng/multi-subscription-hub/releases/latest/download/ClashZeroOmega.exe) | [原版说明](docs/clash-node-backup.md) |
+| **多订阅后台助手 2.0.0** | 多个订阅同时供浏览器使用，电脑与浏览器选择不同线路 | 不写回主 Clash，使用独立后台 | [直接下载 MultiSubscriptionHub.exe](https://github.com/Only-YingFeng/multi-subscription-hub/releases/latest/download/MultiSubscriptionHub.exe) | [新版说明](#多订阅后台助手-200-详细说明) |
+
+下载对应 EXE 后，放到自己的可写文件夹中双击运行，无需安装 Python 或 Node.js。联网仍需本机自己的有效 Clash 配置、核心与浏览器 ZeroOmega；原版通过主 Clash 执行浏览器入口，新版需要自己的后台持续运行。
+
+两者都逐条保留真实节点名称，手动选择线路，失败不自动换节点或直连。它们使用独立端口登记与状态；**不要把两者的私有目录互相覆盖**。同一个浏览器在一次恢复中使用对应软件生成的 BAK，恢复前先备份原有 ZeroOmega 选项。
+
+## 源码入口与下载材料
+
+- **原版源码：** [original-source/](original-source/)，入口 `original-source/app.py`；原版构建和回归命令见其独立说明。
+- **新版源码：** 仓库根目录，入口 `app.py`，后台/控制器/显示层分别为 `backend.py`、`controller.py`、`view.py`。
+- **完整下载材料：** [Release](https://github.com/Only-YingFeng/multi-subscription-hub/releases/latest) 提供两款 EXE。已有完整 ZIP 包含多订阅 EXE、两款对应源码和许可材料；也可以直接浏览或下载本仓库源码。
+- **许可：** 两款应用自身源码采用 [MIT](LICENSE)，第三方组件保留各自许可，见 [NOTICE.md](NOTICE.md)。
+
+原版没有删除：先前它只作为新版的源码基线收录，现在补齐了独立的软件说明与 EXE 下载入口。
+
+## 多订阅后台助手 2.0.0 详细说明
 
 Windows 上的独立浏览器代理后台：读取 Clash Verge Rev 已下载的多个订阅，为每个真实节点创建固定的本地 SOCKS5 入口，生成一份 ZeroOmega 备份。电脑的 Clash 默认线路和浏览器手动选择的线路可以同时不同。
 
@@ -10,7 +34,7 @@ Windows 上的独立浏览器代理后台：读取 Clash Verge Rev 已下载的�
 
 *截图来自合成数据的原生窗口演示，标有 DEMO；节点、端口、可用数量与版本角标仅用于展示排版，不代表接收者的线路或当前联网结果。*
 
-## 可以做什么
+### 可以做什么
 
 - 多个订阅同时供浏览器使用；不同浏览器在 ZeroOmega 中手动选择各自的具体节点。
 - 每条节点一个本地 `127.0.0.1` SOCKS5 入口，尽量保留完整节点名；跨订阅同名时只添加必要区分。
@@ -22,7 +46,7 @@ Windows 上的独立浏览器代理后台：读取 Clash Verge Rev 已下载的�
 
 **新版不需要写回 Clash 扩展。** 它运行自己的后台，不修改电脑原来的默认节点、系统代理、TUN、DNS、主路由或订阅原文。它也不是任意旧 `.bak` 的编辑合并器。
 
-## 使用前准备
+### 使用前准备
 
 1. Windows x64；本次构建和源码环境为 CPython 3.13 x64。
 2. 已安装并运行 Clash Verge Rev，已下载自己的有效订阅，主 Clash 使用规则模式。本版本以 Clash Verge Rev 2.5.7 / Mihomo 1.19.32 完成本机验证；其他版本或电脑尚未逐一验收。
@@ -35,7 +59,7 @@ EXE 自带 Python / Qt 运行环境和第三方许可材料。应用自身 MIT �
 
 飞鸟桥接属于可选高级兼容功能，需要用户自己的完整兼容桥接目录与核心，并在“设置”指定路径。此公开包不提供它们，也不会从机场 EXE 自动提取账号。普通 Clash 订阅不需要飞鸟桥接。
 
-## 使用流程
+### 使用流程
 
 1. 在 Clash Verge Rev 中下载或更新订阅。
 2. 打开 `MultiSubscriptionHub.exe`，自动读取本地数据；需要时点击“刷新”。
@@ -48,7 +72,7 @@ EXE 自带 Python / Qt 运行环境和第三方许可材料。应用自身 MIT �
 
 没有自动安装系统服务、计划任务或开机启动。重启电脑后重新打开软件并启动后台。
 
-## 订阅更新
+### 订阅更新
 
 **Clash 更新订阅 → 本软件刷新 → 勾选并应用订阅选择 → 检测节点 → 生成新 BAK → ZeroOmega 恢复。**
 
@@ -56,7 +80,7 @@ EXE 自带 Python / Qt 运行环境和第三方许可材料。应用自身 MIT �
 
 不要删除 `private/` 来重置端口：该目录包含稳定身份、历史端口和私有恢复材料。移动软件目录前先停止后台，连同自己的 `private/` 完整搬移。核心版本发生变化时程序会明确停止自动替换，需先核验和备份再处理。
 
-## 隐私与安全
+### 隐私与安全
 
 公开 ZIP 与仓库不包含订阅、UUID、密码、控制密钥、真实节点映射、用户导出的 BAK 或私有测试日志。运行后 `private/` 保存本机敏感配置，权限限当前 Windows 用户与 SYSTEM，**请勿上传或分享该目录**。
 
@@ -66,7 +90,7 @@ BAK 包含节点显示名称与本地端口；即使没有认证信息，也应�
 
 问题反馈请遵循 [SECURITY.md](SECURITY.md)，不要粘贴完整配置或订阅地址。
 
-## 命令行
+### 命令行
 
 在解压目录打开 PowerShell：
 
@@ -79,7 +103,7 @@ BAK 包含节点显示名称与本地端口；即使没有认证信息，也应�
 
 `--start` 启动上次已经准备好的配置，不更新订阅；首次使用和订阅更新建议通过 GUI。`--export` 要求最新准备的配置已运行且入口归属核验通过。GUI EXE 没有常驻终端窗口。
 
-## 从源码运行与构建
+### 从源码运行与构建
 
 在根目录使用 Python 3.13 x64：
 
@@ -101,7 +125,7 @@ python -m venv .venv
 
 原单订阅工具的源码基线在 `original-source/`，来源见 [FORK_ORIGIN.md](FORK_ORIGIN.md)。原工具的“写回 Clash”流程与本软件的独立后台不同，开发新版不要把旧版当作运行入口。
 
-## 测试与限制
+### 测试与限制
 
 可重现的合成测试命令见 [tests/README.md](tests/README.md)。本机原交付曾分别执行后台合约、桥接生命周期、控制器与 Qt 交互测试；公开版本的重跑结果见 [docs/validation.md](docs/validation.md)。它们不更新订阅，不改主 Clash。
 
@@ -109,6 +133,6 @@ python -m venv .venv
 
 节点检测只代表当时测试目标的连通性，不保证所有网站或未来时间。发布上传验证、单元测试、原生 GUI 验收、真实浏览器导入和其他电脑验证分别是不同证据；本次没有代替用户在 ZeroOmega 中恢复备份，也没有宣称其他电脑已通过。
 
-## 开源许可
+### 开源许可
 
 应用自身代码采用 [MIT](LICENSE)，允许使用、修改、再分发及商用，保留许可和版权声明。第三方组件各自遵循原许可证；Qt / PySide / Shiboken 使用 LGPL 路径，完整材料和对应源码入口见 [NOTICE.md](NOTICE.md)。

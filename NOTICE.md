@@ -1,6 +1,6 @@
 # 版权与第三方组件
 
-应用自身代码和界面资源采用根目录的 [MIT License](LICENSE)，版权归 Only-YingFeng。`original-source/` 是同一作者先前工具的源码基线，保留用于理解二开来源；它不是新版运行入口。
+应用自身代码和界面资源采用根目录的 [MIT License](LICENSE)，版权归 Only-YingFeng。`original-source/` 是同一作者的 Clash 节点备份助手 1.0.2 源码，也作为新版二开的基线。原版从 `original-source/app.py` 运行，多订阅新版从根目录 `app.py` 运行；不要混用两个入口。
 
 第三方组件、字体和原始许可文档不因本项目使用 MIT 而改变许可。Qt / PySide6 / Shiboken 使用其 LGPL 路径，QtAwesome、QtPy、PyYAML、Python、PyInstaller 及图标字体分别遵循所附原始许可。具体组件版本、完整许可、版权声明、源码获取入口与依赖替换方法见 [licenses-ui/NOTICE.md](licenses-ui/NOTICE.md) 和发布包的 `第三方许可/`。
 
