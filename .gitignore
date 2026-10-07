@@ -1,0 +1,33 @@
+# Local accounts, subscriptions, runtime state and exports never belong in Git.
+private/
+output/
+profiles/
+prepared/
+backups/
+logs/
+.env
+.env.*
+*.bak
+*.log
+*.private.*
+后台状态.json
+启动结果.json
+停止结果.json
+导出结果.json
+
+# Rebuildable development and packaging output.
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+build/
+build-*/
+dist/
+dist-*/
+*.spec
+*.exe
+*.dll
+*.zip
+design-qa-assets/

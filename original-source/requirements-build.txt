@@ -1,0 +1,6 @@
+PySide6-Essentials==6.11.2
+shiboken6==6.11.2
+QtAwesome==1.4.2
+QtPy==2.4.3
+PyYAML==6.0.3
+PyInstaller==6.20.0

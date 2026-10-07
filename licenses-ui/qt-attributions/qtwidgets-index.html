@@ -1,0 +1,367 @@
+
+  <html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta content="A module which provides a set of C++ technologies for building user interfaces." name="description"/>
+  <title>Qt Widgets | Qt 6.12.0</title>
+  <link rel="stylesheet" type="text/css" href="/style/online2.css" />
+  <link rel="stylesheet" href="https://www.qt.io/hubfs/qt-design-system/qt-design-system-1.1.0.css" />
+  <link rel="stylesheet" type="text/css" href="/style/font-awesome.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/themes/default/style.min.css" />
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/themes/default-dark/style.min.css" />
+  <link href="images/htmltabs.css" rel="stylesheet" type="text/css"/>
+  <link rel="shortcut icon" href="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon.ico.gzip" />
+  <link rel="icon" type="image/png" href="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" href="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/assets/images/favicon-16x16.png" />
+  <script type="text/javascript" src="//d33sqmjvzgs8hq.cloudfront.net/wp-includes/js/jquery/jquery.js.gzip"></script>
+  <script type="text/javascript" src="//d33sqmjvzgs8hq.cloudfront.net/wp-includes/js/jquery/jquery-migrate.min.js.gzip"></script>
+  <script type="text/javascript" src="//d33sqmjvzgs8hq.cloudfront.net/wp-content/themes/oneqt/js/combo.js.gzip"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jstree/3.3.17/jstree.min.js"></script>
+  <script type="text/javascript" src="/scripts/popper.min.js"></script>
+  <script type="text/javascript" src="/scripts/tippy.min.js"></script>
+  <script type="text/javascript" src="/scripts/qtds-extras.js"></script>
+  <script type="text/javascript"> wpThemeFolder = 'https://qt.io/wp-content/themes/oneqt'; </script>
+  <script type="text/javascript">
+ $(document).ready(function(){
+   $("input[type=radio]").on("click", function() {
+   var lbl = $(this).next().text();
+   $("input[type=radio]:not(checked)").filter(function() {
+     if ($(this).next().text() == lbl)
+         $(this).prop("checked", true);
+   });
+   });
+ });
+  </script>
+  <script type="text/javascript">
+    $(function () {
+      if (document.documentElement.getAttribute('data-theme') === 'dark')
+        $('input#th-toggle').prop('checked', true);
+      $('input#th-toggle').change(function() {
+        var theme = this.checked ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+        document.documentElement.setAttribute('data-theme', theme);
+        $('#sidebar-toctree').jstree(true).set_theme('default' + `${theme === 'dark' ? '-dark' : ''}`);
+      });
+    });
+  </script>
+  <script type="text/javascript" src="/scripts/init-tree.js"></script>
+  <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5QQXBTC');</script>
+  <!-- End Google Tag Manager -->
+  <script type="text/javascript" src="/scripts/qt-design-system-1.1.0-doc.js"></script>
+  <script src="/scripts/prettify.js" type="text/javascript"></script>
+</head>
+<body class="qt-design-system" style="background:var(--content-bg-color)" onload="prettyPrint()">
+<div class="qds-page-header" id="qds-page-header">
+<header class="b-header" data-float="true">
+    <div class="b-header__container">
+
+        <div class="b-header__secondary-level">
+            <div class="b-header__secondary-level__back">
+                <a class="c-link c-link--left" href="https://www.qt.io/">Back to Qt.io</a>
+            </div>
+            <div class="b-header__secondary-level__right">
+                <a href="https://www.qt.io/contact-us/" target="_blank">Contact Us</a>
+                <a href="https://blog.qt.io/" target="_blank">Blog</a>
+                <a href="https://www.qt.io/download/" target="_blank" class="c-button c-button--small">Download Q&#116;</a>
+            </div>
+        </div>
+
+        <div class="b-header__primary-level">
+            <div class="b-header__primary-level__left">
+                <a class="b-header__logo" href="/">
+                    <img src="/style/qt-logo-documentation.png" srcset="/style/qt-logo-documentation.png 1x, /style/qt-logo-documentation-2x.png 2x" alt="Qt documentation">
+                </a>
+            </div>
+            <div class="b-header__primary-level__navigation">
+            <ul class="c-navigation-header">
+                <li id="qds-trans" role="menu" class="has-children" style="display: none; margin: 0 20px 5px 0;top:7px">
+                <div class="lang-icon theme-icon"><a></a></div>
+                    <ul id="qds-trans-ul">
+                        <li class="tr-lang active" data-lang="en"><a>English</a></li>
+                    </ul>
+                </li>
+                <li role="menu" style="margin: 0 5px 5px 0;top:7px">
+                  <div title="Toggle light/dark theme" class="theme-switch-wrapper">
+                    <label class="theme-switch" for="th-toggle">
+                        <input type="checkbox" id="th-toggle" />
+                        <div class="theme-icon"></div>
+                    </label>
+                  </div>
+                </li>
+                <li role="menu">
+                    <a href="https://www.qt.io/academy" aria-haspopup="true" aria-expanded="false">Qt Academy</a>
+                </li>
+                <li role="menu">
+                    <a href="/archives" aria-haspopup="true" aria-expanded="false">Archives</a>
+                </li>
+                <li role="menu">
+                    <a href="https://doc-snapshots.qt.io/" aria-haspopup="true" aria-expanded="false">Snapshots</a>
+                </li>
+            </ul>
+            </div>
+            <div class="b-header__primary-level__hamburger">
+                <div class="c-hamburger"></div>
+            </div>
+        </div>
+    </div>
+</header>
+</div>
+<div data-global-resource-path="qt-design-system/components/b-sidebar.html">
+    <div class="b-sidebar b-sidebar--full-width">
+        <aside class="b-sidebar__sidebar">
+            <div id="qds-sbhandle"></div>
+            <div class="b-sidebar__sidebar__mobile-close"><div class="c-mobile-close"></div></div>
+            <div class="b-sidebar__sidebar__mobile-toggle" data-mobile-title="Topics"></div>
+                        <div class="b-sidebar__sidebar__content">
+                <div data-margin-bottom="sm">
+                                        <select id="qds-vdropdown" class="c-form-select c-form-select--dark js-versioncontrol" style="visibility:hidden">
+                                            </select>
+                                    </div>
+                                <div id="qds-filter-container" data-margin-bottom="sm" style="display:none">
+                    <label for="qds-filter-sl">Filter topics</label>
+                    <select id="qds-filter-sl" class="c-form-select c-form-select--dark"></select>
+                    <div id="qds-filter-note" style="display:none">Topic not in active filter<button type="button" id="qds-filter-clear">Clear</button></div>
+                </div>
+                                <div id="qds-ec-toggle" title="Expand/collapse all"></div>
+                <nav>
+                    <div id="sidebar-toctree"></div>
+                    <ul class="c-sidebar-navigation">
+                                                
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+        <div class="b-sidebar__content">
+            <div class="b-sidebar__topbar" data-margin-bottom="sm">
+                <div class="b-topbar">
+                    <div class="b-topbar__search">
+                        <form id="site-search" role="search" style="width: 535px; max-width: 100%" autocomplete="off">
+                            <input accesskey="f" class="c-form-input-field c-form-input-field--search" placeholder="Search" id="search" name="search" onclick="(function(w,d,i){i.removeAttribute('on'+w.event.type);var j=d.createElement('script'),c=d.createElement('link');j.async=true;j.onload=function(){qtSearchInit(i,w.qtSearchNavigation)};j.src='//www.qt.io/hubfs/qt-design-system/qt-search-component-v2/qt-search-component-v2.js';c.rel='stylesheet';c.onload=function(){try{w.qtscs=1;qtSearchStyle(i)}catch(e){}};c.href='//www.qt.io/hubfs/qt-design-system/qt-search-component-v2/qt-search-component-v2.css';d.head.appendChild(c);d.head.appendChild(j)})(window,document,this)" required type="text">
+                            <button type="submit" style="display:none;">Search</button>
+                            <style>.js-qt-search-component{z-index:1000;}</style>
+                        </form>
+                    </div>                    <div class="b-topbar__breadcrump" translate="no">
+                        <ul class="c-breadcrump">
+                            <li><a href="index.html">Qt 6.12</a></li>
+                            <li><a>Qt Widgets</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="b-sidebar__content__wrapper">
+                <article class="b-sidebar__content__left">
+                    <div id="qds-toc-menu">On this page</div>
+                    <div class="context mainContent" style="margin: 0;padding: 0; background: 0;">
+                    
+
+<div class="context">
+<h1 class="title">Qt Widgets</h1>
+<!-- $$$qtwidgets-index.html-description -->
+<div class="descr" id="details">
+<p>The <a href="qtwidgets-module.html" translate="no">Qt Widgets Module</a> provides a set of UI elements to create classic desktop-style user interfaces. See the <a href="topics-ui.html">User Interfaces</a> overview for more information on using widgets.</p>
+<h2 id="widgets">Widgets<a class="plink" href="#widgets" title="Direct link to this headline"></a></h2>
+<p>Widgets are the primary elements for creating user interfaces in Qt. <a href="widget-classes.html#the-widget-classes">Widgets</a> can display data and status information, receive user input, and provide a container for other widgets that should be grouped together. A widget that is not embedded in a parent widget is called a <a href="application-windows.html">window</a>.</p>
+<p class="centerAlign"><img alt="Parent widget containing various child widgets" src="images/parent-child-widgets.png"/></p><p>The <a href="qwidget.html" translate="no">QWidget</a> class provides the basic capability to render to the screen and to handle user input events. All UI elements that Qt provides are either subclasses of <a href="qwidget.html" translate="no">QWidget</a> or are used in connection with a <a href="qwidget.html" translate="no">QWidget</a> subclass. To create custom widgets, subclass <a href="qwidget.html" translate="no">QWidget</a> or a suitable subclass and reimplement the virtual event handlers.</p>
+<ul>
+<li><a href="application-windows.html">Window and Dialog Widgets</a></li>
+<li><a href="mainwindow.html">Application Main Window</a></li>
+<li><a href="dialogs.html">Dialog Windows</a></li>
+<li><a href="focus.html">Keyboard Focus in Widgets</a></li>
+</ul>
+<h2 id="styles">Styles<a class="plink" href="#styles" title="Direct link to this headline"></a></h2>
+<p><a href="style-reference.html">Styles</a> draw on behalf of widgets and encapsulate the look and feel of a GUI. Qt's built-in widgets use the <a href="qstyle.html" translate="no">QStyle</a> class to perform nearly all of their drawing, ensuring that they look exactly like the equivalent native widgets.</p>
+<div class="table"><table class="generic">
+<tr class="odd" valign="top"><td><p class="centerAlign"><img alt="Windows style tab widgets" src="images/windowsvista-tabwidget.png"/></p></td><td><p class="centerAlign"><img alt="Fusion desktop style tab widgets" src="images/fusion-tabwidget.png"/></p></td><td><p class="centerAlign"><img alt="macOS style tab widgets" src="images/macos-tabwidget.png"/></p></td></tr>
+</table></div>
+<p><a href="stylesheet.html">Qt Style Sheets</a> customize the appearance of widgets with CSS-like rules. <a href="qtwidgets-styling-approaches.html">Styling Approaches for Qt Widgets</a> explains when to use a style, <a href="qtlabsstylekit-index.html">StyleKit</a>, or a style sheet.</p>
+<h2 id="layouts">Layouts<a class="plink" href="#layouts" title="Direct link to this headline"></a></h2>
+<p><a href="layout.html">Layouts</a> are an elegant and flexible way to automatically arrange child widgets within their container. Each widget reports its size requirements to the layout through the <a href="qwidget.html#sizeHint-prop" translate="no">sizeHint</a> and <a href="qwidget.html#sizePolicy-prop" translate="no">sizePolicy</a> properties, and the layout distributes the available space accordingly.</p>
+<div class="table"><table class="generic">
+<tr class="odd" valign="top"><td><p class="centerAlign"><img alt="5-children layout" src="images/qgridlayout-with-5-children.png"/></p></td><td><p class="centerAlign"><img alt="6-children layout" src="images/qformlayout-with-6-children.png"/></p></td></tr>
+</table></div>
+<p><a href="qtdesigner-manual.html">Qt Widgets Designer</a> is a powerful tool for interactively creating and arranging widgets in layouts.</p>
+<h2 id="model-view-classes">Model/View Classes<a class="plink" href="#model-view-classes" title="Direct link to this headline"></a></h2>
+<p>The <a href="model-view-programming.html">model/view</a> architecture provides classes that manage the way data is presented to the user. Data-driven applications which use lists and tables are structured to separate the data and view using models, views, and delegates.</p>
+<p class="centerAlign"><img alt="File directory using a tree view" src="images/fusion-treeview.png"/></p><h2 id="graphics-view">Graphics View<a class="plink" href="#graphics-view" title="Direct link to this headline"></a></h2>
+<p>The <a href="graphicsview.html">Graphics View Framework</a> is for managing and interacting with a large number of custom-made 2D graphical items, and a view widget for visualizing the items, with support for zooming and rotation.</p>
+<p class="centerAlign"><img alt="Various shapes and graphics on a grid" src="images/graphicsview-items.png"/></p><h2 id="using-the-module">Using the Module<a class="plink" href="#using-the-module" title="Direct link to this headline"></a></h2>
+<p>Using a Qt module's C++ API requires linking against the module library, either directly or through other dependencies. Several build tools have dedicated support for this, including <a href="https://cmake.org/cmake/help/latest/">CMake</a> and <a href="qmake-manual.html">qmake</a>.</p>
+<h3 id="building-with-cmake">Building with CMake<a class="plink" href="#building-with-cmake" title="Direct link to this headline"></a></h3>
+<p>Use the <code translate="no">find_package()</code> command to locate the needed module component in the <code translate="no">Qt6</code> package:</p>
+<div class="pre"><pre class="cpp prettyprint" translate="no"><code class="cpp">find_package(Qt6 REQUIRED COMPONENTS Widgets)
+target_link_libraries(mytarget PRIVATE Qt6<span class="operator">::</span>Widgets)</code></pre></div>
+<p>For more details, see the <a href="cmake-manual.html">Build with CMake</a> overview.</p>
+<h3 id="building-with-qmake">Building with qmake<a class="plink" href="#building-with-qmake" title="Direct link to this headline"></a></h3>
+<p>To configure the module for building with qmake, add the module as a value of the <code translate="no">QT</code> variable in the project's .pro file:</p>
+<div class="pre"><pre class="cpp prettyprint" translate="no"><code class="cpp">QT <span class="operator">+</span><span class="operator">=</span> widgets</code></pre></div>
+<h2 id="security-considerations">Security Considerations<a class="plink" href="#security-considerations" title="Direct link to this headline"></a></h2>
+<p>Several Qt Widgets classes deserialize or parse data that an application can supply from any source, and Qt cannot verify its provenance. Give particular consideration to the following:</p>
+<ul>
+<li><a href="qheaderview.html#security-considerations" translate="no">QHeaderView::restoreState()</a> deserializes a versioned binary state blob.</li>
+<li><a href="qfiledialog.html#security-considerations" translate="no">QFileDialog::restoreState()</a> likewise deserializes a binary state blob, which embeds a <a href="qheaderview.html" translate="no">QHeaderView</a> state blob.</li>
+<li><a href="qmainwindow.html#security-considerations" translate="no">QMainWindow::restoreState()</a> deserializes a binary state blob describing a recursively nested toolbar and dock widget layout.</li>
+<li><a href="qsplitter.html#security-considerations" translate="no">QSplitter::restoreState()</a> deserializes a binary state blob describing splitter sizes and orientation.</li>
+<li><a href="stylesheet.html#security-considerations">Qt Style Sheets</a> can reference and load arbitrary local files through the <code translate="no">url()</code> function.</li>
+</ul>
+<p>Only pass such APIs data that your application previously produced and persisted itself (typically via <a href="qsettings.html" translate="no">QSettings</a>), or that is otherwise fully under your application's control.</p>
+<h2 id="articles-and-guides">Articles and Guides<a class="plink" href="#articles-and-guides" title="Direct link to this headline"></a></h2>
+<ul>
+<li><a href="widgets-tutorial.html">Widgets Tutorial</a></li>
+<li><a href="widgets-getting-started.html">Getting Started Programming with Qt Widgets</a></li>
+<li><a href="https://doc.qt.io/qtcreator/creator-writing-program.html">Qt Creator: Tutorial: Qt Widgets application</a></li>
+<li><a href="https://doc.qt.io/vscodeext/vscodeext-tutorials-qt-widgets.html">Qt Extension for Visual Studio Code: Tutorial: Qt Widgets application</a></li>
+<li><a href="modelview.html">Model/View Tutorial</a></li>
+<li><a href="qtwidgets-styling-approaches.html">Styling Approaches for Qt Widgets</a></li>
+</ul>
+<h2 id="examples">Examples<a class="plink" href="#examples" title="Direct link to this headline"></a></h2>
+<ul>
+<li><a href="examples-widgets.html">Qt Widgets Examples</a></li>
+<li><a href="layout.html#layout-examples">Layout Examples</a></li>
+<li><a href="examples-widgets-tools.html">Widget Tools Examples</a></li>
+</ul>
+<h2 id="api-reference">API Reference<a class="plink" href="#api-reference" title="Direct link to this headline"></a></h2>
+<ul>
+<li><a href="qtwidgets-module.html" translate="no">Qt Widgets C++ Classes</a><ul>
+<li><a href="widget-classes.html#basic-widget-classes">Basic Widget Classes</a></li>
+<li><a href="widget-classes.html#advanced-widget-classes">Advanced Widget Classes</a></li>
+<li><a href="widget-classes.html#abstract-widget-classes">Abstract Widget Classes</a></li>
+<li><a href="widget-classes.html#organizer-widget-classes">Organizer Widget Classes</a></li>
+<li><a href="widget-classes.html#graphics-view-classes">Graphics View Classes</a></li>
+<li><a href="model-view-programming.html#the-model-view-classes">Model/View Classes</a></li>
+<li><a href="widget-classes.html#main-window-and-related-classes">Main Window and Related Classes</a></li>
+<li><a href="widget-classes.html#widget-appearance-and-style-related-classes">Widget Appearance and Style Related Classes</a></li>
+<li><a href="widget-classes.html#layout-classes">Layout Classes</a></li>
+</ul>
+</li>
+<li><a href="stylesheet-reference.html">Qt Style Sheets Reference</a></li>
+</ul>
+<h2 id="module-evolution">Module Evolution<a class="plink" href="#module-evolution" title="Direct link to this headline"></a></h2>
+<p><a href="widgets-changes-qt6.html">Changes to Qt Widgets</a> lists important changes in the module API and functionality that were done for the Qt 6 series of Qt.</p>
+<h2 id="licenses">Licenses<a class="plink" href="#licenses" title="Direct link to this headline"></a></h2>
+<p>The Qt Widgets module is available under commercial licenses from <a href="https://www.qt.io/about-us/">The Qt Company</a>. In addition, it is available under free software licenses: The <a href="https://www.gnu.org/licenses/lgpl-3.0.html">GNU Lesser General Public License, version 3</a>, or the <a href="https://www.gnu.org/licenses/old-licenses/gpl-2.0.html">GNU General Public License, version 2</a>. See <a href="licensing.html">Qt Licensing</a> for further details.</p>
+</div>
+<!-- @@@qtwidgets-index.html -->
+</div>
+<p class="copy-notice">
+<abbr title="Copyright">©</abbr> 2026 The Qt Company Ltd.
+   Documentation contributions included herein are the copyrights of
+   their respective owners.     The documentation provided herein is licensed under the terms of the    <a href="http://www.gnu.org/licenses/fdl.html">GNU Free Documentation    License version 1.3</a> as published by the Free Software Foundation.     Qt and respective logos are <a href="https://doc.qt.io/qt/trademarks.html">    trademarks</a> of The Qt Company Ltd. in Finland and/or other countries
+   worldwide. All other trademarks are property of their respective owners. </p>
+
+                    </div>
+                </article>
+                <aside class="b-sidebar__content__right">
+                    <div class="h-wysiwyg-html" data-scheme>
+                                                <h6><strong>Contents</strong></h6>
+                        <nav>
+                            <ul class="c-tableofcontents js-c-tableofcontents" data-tableofcontents-id="wrapperid" data-margin-top="sm">
+<li class="level1"><p><a href="#widgets">Widgets</a></p></li>
+<li class="level1"><p><a href="#styles">Styles</a></p></li>
+<li class="level1"><p><a href="#layouts">Layouts</a></p></li>
+<li class="level1"><p><a href="#model-view-classes">Model/View Classes</a></p></li>
+<li class="level1"><p><a href="#graphics-view">Graphics View</a></p></li>
+<li class="level1"><p><a href="#using-the-module">Using the Module</a></p></li>
+<li class="level2"><p><a href="#building-with-cmake">Building with CMake</a></p></li>
+<li class="level2"><p><a href="#building-with-qmake">Building with qmake</a></p></li>
+<li class="level1"><p><a href="#security-considerations">Security Considerations</a></p></li>
+<li class="level1"><p><a href="#articles-and-guides">Articles and Guides</a></p></li>
+<li class="level1"><p><a href="#examples">Examples</a></p></li>
+<li class="level1"><p><a href="#api-reference">API Reference</a></p></li>
+<li class="level1"><p><a href="#module-evolution">Module Evolution</a></p></li>
+<li class="level1"><p><a href="#licenses">Licenses</a></p></li>
+</ul>
+                        </nav>
+                                            </div>
+                                    </aside>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="footer">
+<div class="l-footer">
+    <div class="l-footer__container">
+        <div class="l-footer__row l-footer__row--no-padding-bottom">
+            <div class="l-footer__column l-footer__company">
+                <div class="l-footer__logo">
+                    <a href="https://www.qt.io/?hsLang=en" class="c-logo-footer">
+                    <img src="/images/qtgroup.svg">
+                    </a>
+                </div>
+                <div class="c-social-media-links">
+                    <a href="https://twitter.com/qtproject" target="_blank" rel="noopener" class="fm_button fm_twitter"><span></span></a>
+                    <a href="https://www.facebook.com/qt/" target="_blank" rel="noopener" class="fm_button fm_facebook"><span></span></a>
+                    <a href="https://www.youtube.com/user/QtStudios" target="_blank" rel="noopener" class="fm_button fm_youtube"><span></span></a>
+                    <a href="https://www.linkedin.com/company/qtgroup/" target="_blank" rel="noopener" class="fm_button fm_linkedin"><span></span></a>
+                </div>
+                <div class="l-footer__contact">
+                        <a class="c-btn " href="https://www.qt.io/contact-us?hsLang=en">Contact Us</a>
+                </div>
+
+            </div>
+            <div class="l-footer__column l-footer__navigation">
+                <div class="c-footer-navigation">
+
+                        <span><div class="hs-menu-wrapper" role="navigation" aria-label="Navigation Menu">
+<ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Qt Group</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/group" role="menuitem">Our Story</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/brand" role="menuitem">Brand</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/newsroom" role="menuitem">News</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/careers" role="menuitem">Careers</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/investors" role="menuitem">Investors</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/product" role="menuitem">Qt Products</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/product/quality-assurance" role="menuitem">Software Quality Products</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Licensing</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/terms-conditions" role="menuitem">License Agreement</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/licensing/open-source-lgpl-obligations" role="menuitem">Open Source</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/pricing" role="menuitem">Plans and pricing</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/download" role="menuitem">Download</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/faq/overview" role="menuitem">FAQ</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Learn Qt</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/academy" role="menuitem">For Learners</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-educational-license" role="menuitem">For Students and Teachers</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://doc.qt.io/" role="menuitem" target="_blank" rel="noopener">Qt Documentation</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://forum.qt.io/" role="menuitem" target="_blank" rel="noopener">Qt Forum</a></li>
+   </ul></li>
+  <li class="hs-menu-item hs-menu-depth-1 hs-item-has-children" role="none"><a href="javascript:;" aria-haspopup="true" aria-expanded="false" role="menuitem">Support &amp; Services</a>
+   <ul role="menu" class="hs-menu-children-wrapper">
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-professional-services" role="menuitem">Professional Services</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/customer-success" role="menuitem">Customer Success</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-support/" role="menuitem">Support Services</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/contact-us/partners" role="menuitem">Partners</a></li>
+    <li class="hs-menu-item hs-menu-depth-2" role="none"><a href="https://www.qt.io/qt-world" role="menuitem" target="_blank" rel="noopener">Qt World</a></li>
+   </ul></li>
+ </ul>
+</div></span>
+      </div>
+   </div>
+</div>
+        <div class="l-footer__row">
+            <div class="l-footer__column l-footer__legal">
+                <div class="c-footer-secondary-navigation">
+                    <span><div class="hs-menu-wrapper" role="navigation"  aria-label="Navigation Menu">
+ <ul role="menu">
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="javascript:;" role="menuitem">© 2026 The Qt Company</a></li>
+  <li class="hs-menu-item hs-menu-depth-1" role="none"><a href="mailto:feedback@qt.io?Subject=Feedback%20about%20doc.qt.io%20site">Feedback</a></li>
+ </ul>
+</div></span>
+                    <p class="c-footer-secondary-navigation__group-notice">Qt Group includes The Qt Company Oy and its global subsidiaries and affiliates.</p>
+                </div>
+            </div>
+            <div class="l-footer__column l-footer__some-links">
+            </div>
+        </div>
+    </div>
+</div>
+</div></body></html>
