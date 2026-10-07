@@ -4,6 +4,12 @@
 
 这是先前开发的单订阅工具，并没有被多订阅后台助手替换或删除。它将 Clash Verge Rev **当前生效订阅**的全部真实节点转换为 ZeroOmega 中的本地 SOCKS5 情景模式，并通过订阅关联的持久扩展让主 Mihomo 为这些入口执行分流。
 
+![Clash 节点备份助手界面](clash-backup-interface-demo.png)
+
+*使用原版实际 Qt 显示层与合成数据渲染的 DEMO；节点、延迟、路径及操作状态均为演示，没有连接或修改主 Clash。*
+
+首次使用请看 [Clash Verge Rev + ZeroOmega 搭配教程](clash-zeroomega-guide.md)，包含官方插件地址、恢复 BAK 的步骤与菜单含义。
+
 ## 使用流程
 
 1. 安装并运行自己的 Clash Verge Rev，更新或切换到需要使用的订阅，使用规则模式；浏览器安装 ZeroOmega。

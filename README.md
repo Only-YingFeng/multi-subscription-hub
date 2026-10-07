@@ -13,12 +13,35 @@
 
 两者都逐条保留真实节点名称，手动选择线路，失败不自动换节点或直连。它们使用独立端口登记与状态；**不要把两者的私有目录互相覆盖**。同一个浏览器在一次恢复中使用对应软件生成的 BAK，恢复前先备份原有 ZeroOmega 选项。
 
+## 安装与入门
+
+- **浏览器插件：** [ZeroOmega 官方 Chrome 商店页面](https://chromewebstore.google.com/detail/proxy-switchyomega-3-zero/pfnededegaaopdmhkdmcofjmoldfiped)，商店名称为 **Proxy SwitchyOmega 3 (ZeroOmega)**；[官方源码](https://github.com/zero-peak/ZeroOmega)也链接到同一商店条目。
+- **代理客户端：** [Clash Verge Rev 官方下载](https://github.com/clash-verge-rev/clash-verge-rev/releases)。
+- **搭配教程：** [从安装插件到导入 BAK、选择节点与更新订阅](docs/clash-zeroomega-guide.md)，分别说明原版写回与新版独立后台的操作。
+
+Clash Verge Rev、ZeroOmega 与本工具是独立项目。ZeroOmega 管理浏览器的代理入口，本工具整理入口与备份，连接仍由 Mihomo 或已适配的本地核心执行。
+
+## 账号与使用权限
+
+两款工具仅使用用户合法取得且获准使用的订阅、节点配置与本地核心。收费线路需要服务商授予的相应会员或付费权限，也可以使用服务商合法提供的免费线路。工具不提供账号，不破解会员、不猜测密码、不伪造授权，也不绕过服务商的收费或访问控制。
+
+账号、套餐、流量及到期后的可用性由服务商决定；本工具不独立核验会员状态。读取到缓存节点或生成 BAK 不会增加使用权限，连接成功也不能作为授权证明。
+
+## Clash 节点备份助手 1.0.2 界面
+
+![Clash 节点备份助手原生界面演示](docs/clash-backup-interface-demo.png)
+
+*原版实际 Qt 显示层使用合成数据渲染，标有 DEMO。图中的节点、延迟、输出路径与步骤状态用于展示界面；没有连接 Clash、检测真实线路或写回配置。*
+
+[查看原版完整使用说明](docs/clash-node-backup.md)
+
 ## 源码入口与下载材料
 
 - **原版源码：** [original-source/](original-source/)，入口 `original-source/app.py`；原版构建和回归命令见其独立说明。
 - **新版源码：** 仓库根目录，入口 `app.py`，后台/控制器/显示层分别为 `backend.py`、`controller.py`、`view.py`。
 - **完整下载材料：** [Release](https://github.com/Only-YingFeng/multi-subscription-hub/releases/latest) 提供两款 EXE。已有完整 ZIP 包含多订阅 EXE、两款对应源码和许可材料；也可以直接浏览或下载本仓库源码。
 - **许可：** 两款应用自身源码采用 [MIT](LICENSE)，第三方组件保留各自许可，见 [NOTICE.md](NOTICE.md)。
+- **适配维护 Skill：** [vpn-clash-bridge](skills/vpn-clash-bridge/SKILL.md)，整理飞鸟流程中的检查、固定入口、私有配置与验收方法，供 Codex 后续适配时复用。它不是 EXE 中的通用 VPN 提取功能，也不包含任何账号或桥接核心。
 
 原版没有删除：先前它只作为新版的源码基线收录，现在补齐了独立的软件说明与 EXE 下载入口。
 
